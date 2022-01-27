@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:whatsapp/Model/chatmodel.dart';
 import 'package:whatsapp/screens/homePage.dart';
 
 void main() {
@@ -10,13 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-      theme: ThemeData(
-        fontFamily: "OpenSans",
-        primaryColor: Color(0xFF075E54),
-
+    return  ChangeNotifierProvider(
+      create: (context) => ChatModel(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+        theme: ThemeData(
+          fontFamily: "OpenSans",
+          primaryColor: Color(0xFF075E54),
+    
+        ),
       ),
     );
   }

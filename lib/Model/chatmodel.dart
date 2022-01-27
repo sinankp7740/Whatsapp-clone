@@ -1,4 +1,6 @@
-class ChatModel{
+import 'package:flutter/cupertino.dart';
+
+class ChatModel with ChangeNotifier {
   String name;
   String icon;
   bool isGroup;
